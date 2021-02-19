@@ -790,7 +790,7 @@ false posixrules
     <database id="2" parent="1" name="imageHoster">
       <ObjectId>16758</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>639</IntrospectionStateNumber>
+      <IntrospectionStateNumber>654</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
     <database id="3" parent="1" name="imageHosterOld">
@@ -870,7 +870,7 @@ UC/10
 </Acl>
       <StateNumber>276</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>640</IntrospectionStateNumber>
+      <IntrospectionStateNumber>655</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="19" parent="2" name="plpgsql">
@@ -970,5 +970,258 @@ UC/10
       <HandlerId>335</HandlerId>
       <Type>index</Type>
     </access-method>
+    <sequence id="31" parent="18" name="hibernate_sequence">
+      <ObjectId>16791</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>646</StateNumber>
+      <DataType>bigint|0s</DataType>
+    </sequence>
+    <table id="32" parent="18" name="images">
+      <ObjectId>16759</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>647</StateNumber>
+    </table>
+    <table id="33" parent="18" name="images_tags">
+      <ObjectId>16767</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>648</StateNumber>
+    </table>
+    <table id="34" parent="18" name="tags">
+      <ObjectId>16770</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>648</StateNumber>
+    </table>
+    <table id="35" parent="18" name="user_profile">
+      <ObjectId>16775</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>650</StateNumber>
+    </table>
+    <table id="36" parent="18" name="users">
+      <ObjectId>16783</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>647</StateNumber>
+    </table>
+    <column id="37" parent="32" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>641</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="38" parent="32" name="date">
+      <Position>2</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>641</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="39" parent="32" name="description">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>641</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="40" parent="32" name="imagefile">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>641</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="41" parent="32" name="title">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>641</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="42" parent="32" name="user_id">
+      <Position>6</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>641</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="43" parent="32" name="images_pkey">
+      <ObjectId>16765</ObjectId>
+      <StateNumber>641</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
+    </index>
+    <key id="44" parent="32" name="images_pkey">
+      <ObjectId>16766</ObjectId>
+      <StateNumber>641</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>images_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="45" parent="32" name="fk13ljqfrfwbyvnsdhihwta8cpr">
+      <ObjectId>16793</ObjectId>
+      <StateNumber>647</StateNumber>
+      <ColNames>user_id</ColNames>
+      <RefTableId>16783</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="46" parent="33" name="images_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>642</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="47" parent="33" name="tags_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>642</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="48" parent="33" name="fkgsj11feci341byyrilwywpe47">
+      <ObjectId>16803</ObjectId>
+      <StateNumber>649</StateNumber>
+      <ColNames>images_id</ColNames>
+      <RefTableId>16759</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>images</RefTableName>
+      <RefKeyName>images_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="49" parent="33" name="fktr5ixprfwwbq8u50gj470tkgv">
+      <ObjectId>16798</ObjectId>
+      <StateNumber>648</StateNumber>
+      <ColNames>tags_id</ColNames>
+      <RefTableId>16770</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>tags</RefTableName>
+      <RefKeyName>tags_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="50" parent="34" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>643</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="51" parent="34" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>643</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="52" parent="34" name="tags_pkey">
+      <ObjectId>16773</ObjectId>
+      <StateNumber>643</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
+    </index>
+    <key id="53" parent="34" name="tags_pkey">
+      <ObjectId>16774</ObjectId>
+      <StateNumber>643</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>tags_pkey</UnderlyingIndexName>
+    </key>
+    <column id="54" parent="35" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>644</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="55" parent="35" name="email_address">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>644</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="56" parent="35" name="full_name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>644</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="57" parent="35" name="mobile_number">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>644</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="58" parent="35" name="user_profile_pkey">
+      <ObjectId>16781</ObjectId>
+      <StateNumber>644</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
+    </index>
+    <key id="59" parent="35" name="user_profile_pkey">
+      <ObjectId>16782</ObjectId>
+      <StateNumber>644</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>user_profile_pkey</UnderlyingIndexName>
+    </key>
+    <column id="60" parent="36" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>645</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="61" parent="36" name="password">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>645</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="62" parent="36" name="username">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>645</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="63" parent="36" name="profile_id">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>645</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="64" parent="36" name="users_pkey">
+      <ObjectId>16789</ObjectId>
+      <StateNumber>645</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
+    </index>
+    <key id="65" parent="36" name="users_pkey">
+      <ObjectId>16790</ObjectId>
+      <StateNumber>645</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="66" parent="36" name="fko47sw84ajr24vfq4ccoha1256">
+      <ObjectId>16808</ObjectId>
+      <StateNumber>650</StateNumber>
+      <ColNames>profile_id</ColNames>
+      <RefTableId>16775</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>user_profile</RefTableName>
+      <RefKeyName>user_profile_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>

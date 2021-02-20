@@ -73,7 +73,6 @@ public class Image {
     }
 
 
-
     public Integer getId() {
         return id;
     }

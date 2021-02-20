@@ -12,7 +12,9 @@ public class CommentService {
     @Autowired
     private CommentRepository commentRepository;
 
-    public void addComment(Comment comment) { commentRepository.addComment(comment); }
+    public void addComment(Comment comment) {
+        commentRepository.addComment(comment);
+    }
 
     public List<Comment> getComment(Integer imageId) {
         return commentRepository.getComment(imageId);

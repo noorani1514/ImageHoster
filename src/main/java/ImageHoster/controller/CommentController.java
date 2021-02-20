@@ -38,9 +38,9 @@ public class CommentController {
         newComment.setCreatedDate(new Date());
         commentService.addComment(newComment);
 
-        //return "redirect:/images/{imageId}/{imageTitle}";
+        return "redirect:/images/{imageId}/{imageTitle}";
 
-        return "redirect:/images";
+//        return "redirect:/images";
     }
 
     @RequestMapping("comments/{imageId}")

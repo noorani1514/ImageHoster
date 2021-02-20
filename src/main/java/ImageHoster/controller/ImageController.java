@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.*;
@@ -55,7 +56,7 @@ public class ImageController {
         model.addAttribute("image", image);
         model.addAttribute("tags", image.getTags());
         List<Comment> com = commentService.getComment(imageId);
-        model.addAttribute("comments",com);
+        model.addAttribute("comments", com);
         return "images/image";
     }
 
@@ -162,13 +163,12 @@ public class ImageController {
         Image image = imageService.getImage(imageId);
         User curr_User = (User) session.getAttribute("loggeduser");
         User imageUser = new User(); //
-        imageUser=image.getUser();
+        imageUser = image.getUser();
 
-        if(imageUser.getUsername().equals(curr_User.getUsername())) {
+        if (imageUser.getUsername().equals(curr_User.getUsername())) {
             imageService.deleteImage(imageId);
             return "redirect:/images";
-        }
-        else{
+        } else {
             String error = "Only the owner of the image can delete the image";
             model.addAttribute("image", image);
             model.addAttribute("deleteError", error);

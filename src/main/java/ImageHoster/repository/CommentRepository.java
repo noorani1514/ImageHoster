@@ -29,7 +29,6 @@ public class CommentRepository {
     }
 
 
-
     public List<Comment> getComment(Integer imageId) {
         EntityManager em = emf.createEntityManager();
         TypedQuery<Comment> typedQuery = em.createQuery("SELECT i from Comment i where image.id =:image_id", Comment.class).setParameter("image_id", imageId);

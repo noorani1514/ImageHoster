@@ -13,20 +13,20 @@ public class JpaConfig {
 
     @Bean
     public EntityManagerFactory entityManagerFactory() {
-        LocalContainerEntityManagerFactoryBean emfb = new LocalContainerEntityManagerFactoryBean();
-        emfb.setPersistenceXmlLocation("classpath:META-INF/persistence.xml");
-        emfb.afterPropertiesSet();
-        return emfb.getObject();
+        LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
+        localContainerEntityManagerFactoryBean.setPersistenceXmlLocation("classpath:META-INF/persistence.xml");
+        localContainerEntityManagerFactoryBean.afterPropertiesSet();
+        return localContainerEntityManagerFactoryBean.getObject();
     }
 
     @Bean
     public DataSource dataSource() {
-        DriverManagerDataSource ds = new DriverManagerDataSource();
-        ds.setDriverClassName("org.postgresql.Driver");
-        ds.setUrl("jdbc:postgresql://localhost:5432/imageHoster");
-        ds.setUsername("postgres");
-        ds.setPassword("postgres");
-        return ds;
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("org.postgresql.Driver");
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/imageHoster");
+        dataSource.setUsername("postgres");
+        dataSource.setPassword("postgres");
+        return dataSource;
     }
 }
 

@@ -4,18 +4,18 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table (name = "comment")
+@Table(name = "comment")
 public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column (name = "id")
+    @Column(name = "id")
     private Integer id;
 
-    @Column (name = "text",length=256)
+    @Column(name = "text", length = 256)
     private String text;
 
-    @Column (name = "createdDate")
+    @Column(name = "createdDate")
     private Date createdDate;
 
     @ManyToOne(fetch = FetchType.EAGER)
